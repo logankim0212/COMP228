@@ -1,0 +1,12 @@
+package application;
+
+public class Health extends Insurance {
+	public Health() {
+		_insuranceType = "Health";
+	}
+
+	@Override
+	public void setInsuranceCost(double monthlyCost) {
+		_monthlyCost = monthlyCost;
+	}
+}

@@ -1,0 +1,33 @@
+/** Exercise01: ProcessMortgage.java
+ * Author: Logan Kim
+ * Purpose: Java application that keeps track of mortgages and computes the total amount owed at any time (mortgage amount + interest).
+ */
+package application;
+import java.util.Scanner;
+
+public class ProcessMortgage {
+	public static void main(String[] args) {
+		// declarations & initializations
+		Scanner input = new Scanner(System.in);
+		Mortgage[] mortgage = new Mortgage[3];
+		double interestRate;
+		String mortgageType;
+		int mortgageNumber;
+		String custumerName;
+		double mortgageAmount;
+		String term;
+		int counter = 0;
+
+		// prompt user for the current interst rate
+		System.out.print("Enter the current interest rate: ");
+		interestRate = input.nextDouble();
+
+		// loop for adding elements in the array
+
+
+
+
+
+
+	} // end main
+} // end class

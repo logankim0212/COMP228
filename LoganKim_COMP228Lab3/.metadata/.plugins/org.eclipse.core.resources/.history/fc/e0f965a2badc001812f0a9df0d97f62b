@@ -1,0 +1,20 @@
+/** Exercise01: Insurance.java
+ * Author: Logan Kim
+ * Purpose: Superclass of Health and Life classes
+*/
+package application;
+
+public abstract class Insurance {
+	private String _insuranceType;
+	private double _monthlyCost;
+
+	public String getInsuranceType() {
+		return _insuranceType;
+	}
+	public double getMonthlyCost() {
+		return _monthlyCost;
+	}
+
+	public abstract void setInsuranceCost();
+	public abstract void displayInfo();
+}

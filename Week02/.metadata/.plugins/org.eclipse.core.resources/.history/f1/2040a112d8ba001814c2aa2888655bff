@@ -1,0 +1,17 @@
+package exercise01;
+
+import java.util.Scanner;
+
+public class CalculateBMI {
+	public static void main(String[] args)
+	{
+		int value;
+		Scanner input = new Scanner(System.in);
+		do
+		{
+
+			System.out.print("Do you want to continue?: ");
+			value = input.nextInt();
+		} while (value != 0);
+	}
+}

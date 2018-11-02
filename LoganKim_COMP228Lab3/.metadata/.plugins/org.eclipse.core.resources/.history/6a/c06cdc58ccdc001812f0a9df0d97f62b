@@ -1,0 +1,27 @@
+/** Exercise02: FullTimeGameTester.java
+ * Author: Logan Kim
+ * Purpose: console application that demonstrates how to create objects of both subclasses. Allow the user to choose
+ *          game tester type and enter the number of hours for the part-time testers.
+ */
+package application;
+
+public class FullTimeGameTester extends GameTester {
+	// field variables
+	public static final double _BASESALARY = 3000.0;
+
+
+	// constructor
+	public FullTimeGameTester(String name) {
+		_name = name;
+		_status = "Part-time";
+	} // end constructor
+
+	// override methods
+	@Override
+	public void setSalary(double hours) {
+		_salary = _RATE * getHours();
+	} // end setSalary
+	public void displayTesterInfo() {
+		System.out.println("Part time Game Tester: \nName: " + getName() + "\nSalary: $" + getSalary());
+	} // end displayTester
+} // end class

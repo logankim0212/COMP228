@@ -1,0 +1,45 @@
+/** Exercise02: Driver.java
+ * Author: Logan Kim
+ * Purpose: console application that demonstrates how to create objects of both subclasses. Allow the user to choose
+ *          game tester type and enter the number of hours for the part-time testers.
+ */
+package application;
+
+import java.util.Scanner; // Importing scanner
+
+public class Driver {
+	public static void main(String[] args) {
+		// local variables
+		Scanner input = new Scanner(System.in);
+		String userInput;
+		String gtName;
+		double workHours;
+
+		// Loop to check if input is correct
+		for (int countIfItIsRight = 0; countIfItIsRight < 1;) {
+			System.out.print("Enter full time or part time [ F or P ]: ");
+			userInput = scan.next();
+			// Getting and displaying information
+			if (userInput.equalsIgnoreCase("F")) {
+				System.out.print("Enter name: ");
+				gtName = scan.next();
+				FullTimeGameTester fullTimeTester = new FullTimeGameTester(gtName);
+				fullTimeTester.setSalary();
+				fullTimeTester.displayTester();
+				countIfItIsRight++; // Counts input as right and increments to end loop
+			} else if (userInput.equalsIgnoreCase("P")) {
+				System.out.print("Enter name: ");
+				gtName = scan.next();
+				System.out.print("Enter work hours: ");
+				workHours = scan.nextDouble();
+				PartTimeGameTester partTimeTester = new PartTimeGameTester(gtName, workHours);
+				partTimeTester.setSalary();
+				partTimeTester.displayTester();
+				countIfItIsRight++; // Counts input as right and increments to end loop
+			} else {
+				System.out.println("Please enter 'F' for full time or 'P' for part time.");
+			}
+		}
+		scan.close();
+	} // End of main method
+} // End of class

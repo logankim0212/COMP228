@@ -1,0 +1,50 @@
+/** Exercise01: Mortgage.java
+ * Author: Logan Kim
+ * Purpose: Java application that keeps track of mortgages and computes the total amount owed at any time (mortgage amount + interest).
+ */
+package application;
+
+public abstract class Mortgage implements MortgageConstants {
+	// declarations & initializations
+	protected int _mortgageNumber;
+	protected String _customerName;
+	protected double _mortgageAmount;
+	protected double _interestRate;
+	protected int _term;
+
+	// getters & setters
+	public int getMortgageNumber() {
+		return _mortgageNumber;
+	}
+	public void setMortgageNumber(int mortgageNumber) {
+		_mortgageNumber = mortgageNumber;
+	}
+	public String getCustomerName() {
+		return _customerName;
+	}
+	public void setCustomerName(String customerName) {
+		_customerName = customerName;
+	}
+	public double getMortgageAmount() {
+		return _mortgageAmount;
+	}
+	public void setMortgageAmount(double mortgageAmount) {
+		_mortgageAmount = mortgageAmount;
+	}
+	public double getInterestRate() {
+		return _interestRate;
+	}
+	public int getTerm() {
+		return _term;
+	}
+	public void setTerm(int term) {
+		_term = term;
+	}
+
+	// check if the amount is less than 300,000
+	public boolean checkAmount(double amount) {
+		return amount > _MAXAMOUNT;
+	}
+	// abstract method
+	public abstract void getMortgageInfo();
+} // end class

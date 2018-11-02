@@ -1,0 +1,76 @@
+/** Exercise01: Driver.java
+ * Author: Logan Kim
+ * Purpose: Java application that implements different types of insurance policies for employees of an organization.
+*/
+package application;
+import java.util.Scanner;
+
+public class Driver {
+	public static void main(String[] args) {
+		// local variables
+		Scanner input = new Scanner(System.in);
+		Insurance[] insuranceArray;
+		String insuranceType;
+		double monthlyCost;
+		int number = 0;
+		int counter = 0;
+
+		// prompt user for the number of array elements
+		System.out.print("Enter the number of insurance that you want to add: ");
+		number = input.nextInt();
+		insuranceArray = new Insurance[number]; // create the array
+
+		// loop for adding elements inside the array
+		while(counter < insuranceArray.length)
+		{
+			// prompt user for insurance type
+			System.out.print("Enter the insurance type (Health/Life): ");
+			insuranceType = input.next();
+
+			// user's decision for health and life
+			if (insuranceType.equalsIgnoreCase("health")) {
+				// call health class
+				Health healthInsurance = new Health();
+
+				// prompt user for the monthly cost
+				System.out.print("Enter the monthly cost of the insurance: ");
+				monthlyCost = input.nextDouble();
+
+				// set monthly cost
+				healthInsurance.setInsuranceCost(monthlyCost);
+
+				// Add value to the array
+				insuranceArray[counter] = healthInsurance;
+				counter++;
+			}
+			else if (insuranceType.equalsIgnoreCase("life")){
+				// call life class
+				Life lifeInsurance = new Life();
+
+				// prompt user for the monthly cost
+				System.out.print("Enter the monthly cost of the insurance: ");
+				monthlyCost = input.nextDouble();
+
+				// set monthly cost
+				lifeInsurance.setInsuranceCost(monthlyCost);
+
+				// Add value to the array
+				insuranceArray[counter] = lifeInsurance;
+				counter++;
+			}
+			else {
+				// user input is neither health nor life
+				System.out.println("Please enter 'health' or 'life'!");
+			}
+		} // end loop
+
+		// loop for displaying the array elements
+		for (int i = 0; i < insuranceArray.length; i++) {
+			System.out.print("Insurance #" + (i + 1) + ": "); // Listing the insurance
+			insuranceArray[i].displayInfo();
+		} // end loop
+
+		// close scanner
+		input.close();
+	} // end main
+} // end class

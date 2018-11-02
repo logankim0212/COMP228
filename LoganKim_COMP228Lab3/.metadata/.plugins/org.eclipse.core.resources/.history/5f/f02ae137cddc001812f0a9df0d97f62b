@@ -1,0 +1,33 @@
+/** Exercise02: GameTester.java
+ * Author: Logan Kim
+ * Purpose: console application that demonstrates how to create objects of both subclasses. Allow the user to choose
+ *          game tester type and enter the number of hours for the part-time testers.
+ */
+package application;
+
+public abstract class GameTester {
+	// field variables
+	protected String _name;
+	protected String _status;
+	protected double _salary;
+	protected double _hours;
+
+	// getters
+	public String getName() {
+		return _name;
+	}
+	public String getStatus() {
+		return _status;
+	}
+	public double getSalary() {
+		return _salary;
+	}
+	public double getHours() {
+		return _hours;
+	}
+
+	// abstract methods
+	public abstract void setSalary();
+	public abstract void setSalary(double salary);
+	public abstract void displayTesterInfo();
+} // end class

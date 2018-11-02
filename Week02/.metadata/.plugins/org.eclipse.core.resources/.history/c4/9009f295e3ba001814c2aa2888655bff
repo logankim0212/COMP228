@@ -1,0 +1,57 @@
+/** Calculate BMI. java
+ * author: Logan Kim
+ * purpose: Develop a java application to calculate Body Mass Index (BMI).
+ */
+package exercise01;
+
+import java.util.Scanner; // used to scan values
+
+public class CalculateBMI {
+	public static void main(String[] args)
+	{
+		// local variables
+		int value; // represents the value for the loop
+		double pounds; // represents the weight entered by the user
+		double feet; // represents the height(feet) entered by the user
+		double inches; // represents the height(inches) entered by the user
+		double weight; // represents the weight in kilograms
+		double height; // represents the height in meters
+		double bmi; // represents the result of the BMI calculation
+
+		// initialization
+		Scanner input = new Scanner(System.in);
+
+		// application description
+		System.out.println("This application will calculate Body Mass Index(BMI).");
+
+		// loop begins
+		do
+		{
+			// prompt the user for his/her weight in pounds
+			System.out.print("Enter your weight (in pounds): ");
+			pounds = input.nextDouble();
+
+			// prompt the user for his/her height in feet and inches
+			System.out.print("Enter your height (in feet and inches as 5 11): ");
+			feet = input.nextDouble();
+			inches = input.nextDouble();
+
+			// convert pounds to kilograms, feet & inches to meters
+			weight = pounds * 0.453;
+			height = feet * 0.304 + inches * 0.0254;
+
+			// calculate BMI
+			bmi = weight / Math.pow(height, 2);
+
+			// display the result
+			System.out.printf("Your Body Mass Index is %.2f.", bmi);
+
+			// prompt the user if he/she wants to continue
+			System.out.print("\nDo you want to continue? (If no, type 0): ");
+			value = input.nextInt();
+		} while (value != 0); // end loop
+
+		// goodbye message
+		System.out.print("Thank you! See you next time!");
+	} // end main
+} // end class

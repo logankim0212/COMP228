@@ -1,0 +1,13 @@
+/** Keyboard Application. java
+ * author: Logan Kim
+ * purpose: Develop a java application to decide the movement.
+ */
+
+package application;
+
+public class KeyboardApplication {
+	public static void main(String[] args)
+	{
+
+	}
+}

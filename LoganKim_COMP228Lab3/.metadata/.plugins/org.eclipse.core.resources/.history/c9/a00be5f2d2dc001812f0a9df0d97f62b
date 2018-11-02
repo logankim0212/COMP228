@@ -1,0 +1,9 @@
+package application;
+
+public interface MortgageConstants {
+	static final int _SHORT = 1;
+	static final int _MEDIUM = 3;
+	static final int _LONG = 5;
+	static final String _BANKNAME = "CityToronto";
+	static final double _MAXAMOUNT = 300000;
+}

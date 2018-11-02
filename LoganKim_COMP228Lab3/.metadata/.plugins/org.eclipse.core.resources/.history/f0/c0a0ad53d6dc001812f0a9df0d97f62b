@@ -1,0 +1,12 @@
+/** Exercise01: ProcessMortgage.java
+ * Author: Logan Kim
+ * Purpose: Java application that keeps track of mortgages and computes the total amount owed at any time (mortgage amount + interest).
+ */
+package application;
+import java.util.Scanner;
+
+public class ProcessMortgage {
+	public static void main(String[] args) {
+
+	} // end main
+} // end class

@@ -1,0 +1,7 @@
+package application;
+
+public class Health extends Insurance {
+	public Health() {
+		this._insuranceType = "Health";
+	}
+}

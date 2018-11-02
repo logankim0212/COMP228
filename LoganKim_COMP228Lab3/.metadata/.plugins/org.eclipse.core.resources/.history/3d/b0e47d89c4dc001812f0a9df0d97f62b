@@ -1,0 +1,48 @@
+package application;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Driver {
+	public static void main(String[] args) {
+		// local variables
+		Scanner input = new Scanner(System.in);
+		String[] insuranceArray;
+		String insuranceType;
+		double monthlyCost;
+		int number;
+		int counter = 0;
+
+		System.out.print("Enter the number of insurance that you want to add: ");
+		number = input.nextInt();
+		insuranceArray = new String[number];
+		while(counter < insuranceArray.length)
+		{
+			System.out.print("Enter the insurance type (Health/Life): ");
+			insuranceType = input.next();
+
+			if (insuranceType.equalsIgnoreCase("health")) {
+				Health healthInsurance = new Health();
+				System.out.print("Enter the monthly cost of the insurance: ");
+				monthlyCost = input.nextDouble();
+				healthInsurance.setInsuranceCost(monthlyCost);
+				insuranceArray[counter] = healthInsurance; // Assigning the value to the array element
+			}
+			else if (insuranceType.equalsIgnoreCase("life")){
+				Life lifeInsurance = new Life();
+				System.out.print("Enter the monthly cost of the insurance: ");
+				monthlyCost = input.nextDouble();
+				lifeInsurance.setInsuranceCost(monthlyCost);
+				insuranceArray[counter] = lifeInsurance; // Assigning the value to the array element
+			}
+			else {
+				System.out.println("Please enter 'health' or 'life'!");
+			}
+
+		}
+		for (int i = 0; i < insuranceArray.length; i++) {
+			System.out.print("Insurance " + (i + 1) + ": "); // Listing the insurance
+			insuranceArray[i].displayInfo();
+		}
+		self.close(); // Closing scanner
+	}
+}

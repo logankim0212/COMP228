@@ -1,0 +1,30 @@
+/** Exercise02: PartTimeGameTester.java
+ * Author: Logan Kim
+ * Purpose: console application that demonstrates how to create objects of both subclasses. Allow the user to choose
+ *          game tester type and enter the number of hours for the part-time testers.
+ */
+package application;
+
+public class PartTimeGameTester extends GameTester {
+	// Declarations initializations
+	public double _hourlySalary = 20.0;
+	public double _hoursWorked;
+
+	// Constructor
+	public PartTimeGameTester(String gtName, double workHours) {
+		this._name = gtName;
+		this._workHours = workHours;
+	}
+
+	// Overriding setSalary to fit PartTimeGameTester class
+	@Override
+	public void setSalary() {
+		this._salary = _hourlySalary * _workHours;
+	}
+
+	// Overriding displayTesters to fit PartTimeGameTester information
+	@Override
+	public void displayTester() {
+		System.out.println("Part time Game Tester Info: \nName: " + _gtName + "\nSalary: $" + _salary);
+	}
+}

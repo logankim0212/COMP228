@@ -1,0 +1,95 @@
+/** Exercise01: ProcessMortgage.java
+ * Author: Logan Kim
+ * Purpose: Java application that keeps track of mortgages and computes the total amount owed at any time (mortgage amount + interest).
+ */
+package application;
+import java.util.Scanner;
+
+public class ProcessMortgage {
+	public static void main(String[] args) {
+		// declarations & initializations
+		Scanner input = new Scanner(System.in);
+		Mortgage[] mortgage = new Mortgage[3];
+		double interestRate;
+		String mortgageType;
+		int mortgageNumber;
+		String custumerName;
+		double mortgageAmount = 0;
+		String term = null;
+		int counter = 0;
+
+		// prompt user for the current interst rate
+		System.out.print("Enter the current interest rate: ");
+		interestRate = input.nextDouble();
+
+		// loop for adding elements in the array
+		while(counter < mortgage.length) {
+			// prompt user for the mortgage type
+			System.out.print("Enter the mortgage type (Business/Personal): ");
+			mortgageType = input.next();
+			// prompt user for mortgage number
+			System.out.print("Enter mortgage number: ");
+			mortgageNumber = input.nextInt();
+
+			// prompt user for customer name
+			System.out.print("Enter customer name: ");
+			custumerName = input.next();
+
+			// prompt user for mortgage amount
+			System.out.print("Enter mortgage amount: ");
+			mortgageAmount = input.nextDouble();
+
+			// Loop to check if it exceeds maximum mortgage amount
+			while (Mortgage.checkAmount(mortgageAmount)) {
+				System.out.println("Maxinum mortgage amount is $" + MortgageConstants._MAXAMOUNT);
+				System.out.print("Enter mortgage amount: ");
+				mortgageAmount = input.nextDouble();
+			}
+
+			// Loop to check if the user enters wrong value
+			do
+			{
+				// prompt user for the term
+				System.out.print("Enter the term (Short/Medium/Long): ");
+				term = input.next();
+				if (term.toLowerCase() != "short" && term.toLowerCase() != "medium" && term.toLowerCase() != "long") {
+					System.out.println("You should enter either short, medium, or long!");
+				}
+			} while (term.equalsIgnoreCase("short") || term.equalsIgnoreCase("medium") || term.equalsIgnoreCase("long"));
+
+
+			// if business
+			if (mortgageType.equalsIgnoreCase("business")) {
+				// call BusinessMortgage class
+				BusinessMortgage businessMortgage = new BusinessMortgage(mortgageNumber, custumerName, mortgageAmount,
+						interestRate, term);
+
+				// Add value to the array
+				mortgage[counter] = businessMortgage;
+				counter++;
+			}
+			// if personal
+			else if (mortgageType.equalsIgnoreCase("personal")) {
+				// call BusinessMortgage class
+				PersonalMortgage PersonalMortgage = new PersonalMortgage(mortgageNumber, custumerName, mortgageAmount,
+						interestRate, term);
+
+				// Add value to the array
+				mortgage[counter] = PersonalMortgage;
+				counter++;
+			}
+			// if wrong input
+			else {
+				System.out.println("You should enter either Business or Personal!");
+			}
+		} // end loop
+
+		// loop for displaying the array elements
+		for (int i = 0; i < mortgage.length; i++) {
+			mortgage[i].getMortgageInfo();
+		} // end loop
+
+		// close scanner
+		input.close();
+	} // end main
+} // end class

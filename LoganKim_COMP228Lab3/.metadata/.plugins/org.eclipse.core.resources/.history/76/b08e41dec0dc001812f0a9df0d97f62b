@@ -1,0 +1,43 @@
+package application;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Driver {
+	public static void main(String[] args) {
+		// local variables
+		Scanner input = new Scanner(System.in);
+		ArrayList<Insurance> insuranceArray = new ArrayList<Insurance>();
+		String insuranceType;
+		double monthlyCost;
+		String keepRun = null;
+
+		while(keepRun.equalsIgnoreCase("health"))
+		{
+			System.out.print("Enter the insurance type (Health/Life): ");
+			insuranceType = input.next();
+
+			if (insuranceType.equalsIgnoreCase("health")) {
+				Health healthInsurance = new Health();
+				System.out.print("Enter the monthly cost of the insurance: ");
+				monthlyCost = input.nextDouble();
+				healthInsurance.setInsuranceCost(monthlyCost);
+				insuranceArray.add(healthInsurance); // Assigning the value to the array element
+			}
+			else if (insuranceType.equalsIgnoreCase("life")){
+				Life lifeInsurance = new Life();
+				System.out.print("Enter the monthly cost of the insurance: ");
+				monthlyCost = input.nextDouble();
+				lifeInsurance.setInsuranceCost(monthlyCost);
+				insuranceArray.add(lifeInsurance); // Assigning the value to the array element
+			}
+			else {
+				System.out.println("Please enter 'health' or 'life'!");
+			}
+			System.out.print("If you want to continue, hit any key. If you want to quit, hit 0.");
+		}
+		for(Insurance el : insuranceArray){
+			System.out.println(el);
+		}
+		input.close(); // Closing scanner
+	}
+}

@@ -1,0 +1,7 @@
+package application;
+
+public class Life extends Insurance {
+	public Life() {
+		this._insuranceType = "Life";
+	}
+}

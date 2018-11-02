@@ -1,0 +1,10 @@
+/** Exercise02: Driver.java
+ * Author: Logan Kim
+ * Purpose: console application that demonstrates how to create objects of both subclasses. Allow the user to choose
+ *          game tester type and enter the number of hours for the part-time testers.
+ */
+package application;
+
+public class Driver {
+
+}

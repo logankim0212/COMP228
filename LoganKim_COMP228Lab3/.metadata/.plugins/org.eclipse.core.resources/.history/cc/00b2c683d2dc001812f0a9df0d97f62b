@@ -1,0 +1,12 @@
+package application;
+
+public abstract class Mortgage implements MortgageConstants {
+	// declarations & initializations
+	protected int _mortgageNumber;
+	protected String _customerName;
+	protected double _mortgageAmount;
+	protected double _interestRate;
+	protected int _term;
+
+
+}

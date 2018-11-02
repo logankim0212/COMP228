@@ -1,0 +1,13 @@
+/** Keyboard Application. java
+ * author: Logan Kim
+ *
+ */
+
+package application;
+
+public class KeyboardApplication {
+	public static void main(String[] args)
+	{
+
+	}
+}

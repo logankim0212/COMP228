@@ -1,0 +1,22 @@
+package application;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Driver {
+	public static void main(String[] args) {
+		// local variables
+		Scanner input = new Scanner(System.in);
+		List<String> insuranceArray = new ArrayList<String>();
+		String insuranceType;
+		double monthlyCost;
+		int i = 0;
+
+		while(i < insuranceArray.length)
+		{
+			System.out.print("Enter the insurance type (Health/Life): ");
+			insuranceType = input.next();
+
+		}
+	}
+}

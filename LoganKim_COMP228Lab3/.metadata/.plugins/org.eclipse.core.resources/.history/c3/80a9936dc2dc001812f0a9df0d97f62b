@@ -1,0 +1,15 @@
+package application;
+
+public class Life extends Insurance {
+	public Life() {
+		_insuranceType = "Life";
+	}
+
+	@Override
+	public void setInsuranceCost(double monthlyCost) {
+		_monthlyCost = monthlyCost;
+	}
+	public void displayInfo(int i) {
+		System.out.println("Insurance " + i + ": Monthly fee of " + _insuranceType + " insurance is $" + _monthlyCost);
+	}
+}

@@ -1,0 +1,23 @@
+/** Exercise01: BusinessMortgage.java
+ * Author: Logan Kim
+ * Purpose: Java application that keeps track of mortgages and computes the total amount owed at any time (mortgage amount + interest).
+ */
+package application;
+
+public class BusinessMortgage extends Mortgage {
+	// Constructor
+	public BusinessMortgage(int mortgageNumber, String customerName, double mortgageAmount, double interestRate, int term) {
+		_mortgageNumber = mortgageNumber;
+		_customerName = customerName;
+		_mortgageAmount = mortgageAmount;
+		_interestRate = interestRate + 2;
+		_term = term;
+	};
+
+	// override method
+	@Override
+	public void getMortgageInfo() {
+		System.out.println("Business Mortgage:%nNo: " + getMortgageNumber() + "%nCustomer Name: " + getCustomerName() +
+				"%nAmount: $" + getMortgageAmount() + "%nRate: " + getInterestRate() + "%" + "%nTerm: " + getTerm());
+	};
+}

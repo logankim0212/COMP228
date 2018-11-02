@@ -1,0 +1,22 @@
+package application;
+
+public class Program {
+	public static void main(String[] args) {
+		// Declarations & Initializations
+//		Shape shape1 = new Shape();
+		Circle c1 = new Circle();
+
+		// set the values for Shape
+//		shape1.setName("Undefined");
+//		shape1.setColour("Blank");
+
+		// set the values for Circle
+		c1.setName("Circle 1");
+		c1.setColour("BLue");
+		c1.setRadius(5.5);
+
+		// draw the shapes
+//		shape1.draw();
+		c1.draw();
+	}
+}

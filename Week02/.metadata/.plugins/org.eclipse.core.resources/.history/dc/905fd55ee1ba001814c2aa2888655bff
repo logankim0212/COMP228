@@ -1,0 +1,34 @@
+package exercise02;
+
+import java.util.Scanner;
+
+public class CalculateDivision {
+	public static void main(String[] args)
+	{
+		int value;
+		double five;
+		double six;
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("This application will check if the integer that you enter is divisible by both 5 and 6, neither of them, or just one of them.");
+		System.out.print("Enter an integer: ");
+		value = input.nextInt();
+
+		five = value % 5;
+		six = value % 6;
+
+		if (five == 0 && six == 0)
+		{
+			System.out.printf("%d is divisible by both 5 and 6.", value);
+		}
+		else if (five != 0 && six != 0)
+		{
+			System.out.printf("%d is not divisible by either 5 or 6.", value);
+		}
+		else
+		{
+			System.out.printf("%d is divisible by 5 or 6, but not both.", value);
+		}
+	}
+}

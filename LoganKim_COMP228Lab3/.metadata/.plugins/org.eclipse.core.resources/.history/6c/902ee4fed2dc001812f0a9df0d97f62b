@@ -1,0 +1,17 @@
+package application;
+
+public abstract class Mortgage implements MortgageConstants {
+	// declarations & initializations
+	protected int _mortgageNumber;
+	protected String _customerName;
+	protected double _mortgageAmount;
+	protected double _interestRate;
+	protected int _term;
+
+	// check if the amount is less than 300,000
+	public boolean checkAmount(double amount) {
+		return amount > _MAXAMOUNT;
+	}
+	// abstract method
+	public abstract void getMortgageInfo();
+}

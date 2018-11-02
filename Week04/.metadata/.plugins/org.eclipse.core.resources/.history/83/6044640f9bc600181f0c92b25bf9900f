@@ -1,0 +1,158 @@
+package application;
+
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+public class Test {
+	// field variable
+	String[] _question = new String[5];
+	String[] _answer = new String[5];
+
+	private void simulateQuestion() {
+		_question[0] = "Question 01"
+				+ "\nWhat does JDK stand for?"
+				+ "\n1) Java Developer Kit"
+				+ "\n2) JavaScript Developer Kit"
+				+ "\n3) Java Development Kit"
+				+ "\n4) JavaScript Development Kit"
+				+ "\n5) None of this above";
+		_question[1] = "Question 02"
+				+ "\nWhich is the correct way to write a method?"
+				+ "\n1) public void helloWorld() { }"
+				+ "\n2) Public void helloWorld() { }"
+				+ "\n3) public void helloWorld(string hello) {}"
+				+ "\n4) public void helloWorld{} [ ]"
+				+ "\n5) Public void helloWorld[] { }";
+		_question[2] = "Question 03"
+				+ "\nWhich one is not a Math class static method?"
+				+ "\n1) abs(x)"
+				+ "\n2) ceil(x)"
+				+ "\n3) floor(x)"
+				+ "\n4) max(x, y)"
+				+ "\n5) minimum(x, y)";
+		_question[3] = "Question 04"
+				+ "\nChoose True or False for the statement below"
+				+ "\nIf a booleanis concatenated with a String, the booleanis converted to the String \"true\" or \"false\""
+				+ "\n1) True"
+				+ "\n2) False";
+		_question[4] = "Question 05"
+				+ "\nChoose True or False for the statement below"
+				+ "\nTo declare a method as static, place the keyword static after the return type in the method’s declaration"
+				+ "\n1) True"
+				+ "\n2) False";
+	}
+	private String checkAnswer(int counter, String answer) {
+		_answer[0] = "3";
+		_answer[1] = "1";
+		_answer[2] = "5";
+		_answer[3] = "1";
+		_answer[4] = "2";
+
+		String result = null;
+
+		switch(answer) {
+		case "1":
+		case "2":
+		case "3":
+		case "4":
+		case "5":
+			if(answer == _answer[counter])
+			{
+				result = "true";
+			}
+			else
+			{
+				result = "false";
+			}
+			break;
+		default:
+			break;
+		}
+		return result;
+	}
+	private String generateMessage(String input) {
+		String answer = null;
+		Random randomObject = new Random();
+		if(input == "true")
+		{
+			switch(randomObject.nextInt(4)) {
+			case 0:
+				answer = "Excellent!";
+				break;
+			case 1:
+				answer = "Good!";
+				break;
+			case 2:
+				answer = "Keep up the good work!";
+				break;
+			case 3:
+				answer = "Nice work!";
+				break;
+			}
+		}
+		else if (input == "false")
+		{
+			switch(randomObject.nextInt(4)) {
+			case 0:
+				answer = "No. Please try again.";
+				break;
+			case 1:
+				answer = "Wrong. Try once more.";
+				break;
+			case 2:
+				answer = "Don't give up!";
+				break;
+			case 3:
+				answer = "No. Keep trying.";
+				break;
+			}
+		}
+		else
+		{
+			answer = "You've entered the wrong value. "
+					+ "Please try it again.";
+		}
+		return answer;
+	}
+	private void inputAnswer() {
+		String answer;
+		String check;
+		String message;
+		int correct = 0;
+		int incorrect;
+		double result;
+		String finalMessage;
+		Test obj = new Test();
+		obj.simulateQuestion();
+
+		for(int counter = 0; counter <= 4; )
+		{
+			answer = JOptionPane.showInputDialog(obj._question[counter]);
+
+			check = obj.checkAnswer(counter, answer);
+
+			message = generateMessage(check);
+			JOptionPane.showMessageDialog(null, message + " Answer is : " + _answer[counter] + " Your answer is: " + answer);
+
+			if (check == "true")
+			{
+				correct++;
+				counter++;
+			}
+			else if (check == "false")
+			{
+				counter++;
+			}
+		}
+		result = (correct / 5) * 100;
+		incorrect = 5 - correct;
+		finalMessage = "You got " + correct + " right, " + incorrect + " wrong. Your score is " + correct + "/5: " + result + "%";
+		JOptionPane.showMessageDialog(null, finalMessage);
+	}
+	public static void main(String[] args)
+	{
+		Test test = new Test();
+		test.inputAnswer();
+	}
+}

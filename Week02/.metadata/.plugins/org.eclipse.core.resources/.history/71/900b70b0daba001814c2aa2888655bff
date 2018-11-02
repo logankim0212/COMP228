@@ -1,0 +1,37 @@
+package exercise01;
+
+import java.util.Scanner;
+
+public class CalculateBMI {
+	public static void main(String[] args)
+	{
+		String value = null;
+		Scanner input = new Scanner(System.in);
+		do
+		{
+			double pounds;
+			double feet;
+			double weight;
+			double height;
+			double bmi;
+
+			System.out.println("This application will calculate Body Mass Index(BMI).");
+			System.out.print("Enter your weight in pounds: ");
+			pounds = input.nextDouble();
+
+			String[] values = input.split(" ");
+			System.out.print("Enter your height in feet: ");
+			feet = input.nextDouble();
+
+			weight = pounds * 0.453;
+			height = feet * 0.304;
+
+			bmi = weight / Math.pow(height, 2);
+
+			System.out.printf("Your Body Mass Index is %f2.", bmi);
+
+			System.out.print("Do you want to continue?: ");
+			value = input.next();
+		} while (value.toLowerCase() != "n");
+	}
+}

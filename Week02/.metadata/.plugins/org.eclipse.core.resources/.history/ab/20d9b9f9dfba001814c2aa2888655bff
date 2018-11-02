@@ -1,0 +1,61 @@
+package exercise03;
+
+import java.util.Scanner;
+
+import application.KeyboardAppOPP;
+
+public class CalculateBMIDescription {
+	private int _value;
+	private double _pounds;
+	private double _feet;
+	private double _inches;
+	private double _weight;
+	private double _height;
+	private double _bmi;
+
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		CalculateBMIDescription self = new CalculateBMIDescription();
+		System.out.println("This application will calculate Body Mass Index(BMI).");
+		do
+		{
+			System.out.print("Enter your weight (in pounds): ");
+			self._pounds = input.nextDouble();
+
+			System.out.print("Enter your height (in feet and inches as 5 11): ");
+			self._feet = input.nextDouble();
+			self._inches = input.nextDouble();
+
+			self._weight = self._pounds * 0.453;
+			self._height = self._feet * 0.304 + self._inches * 0.0254;
+
+			self._bmi = self._weight / Math.pow(self._height, 2);
+
+			System.out.printf("Your Body Mass Index is %.2f.\n", self._bmi);
+
+			System.out.print("Do you want to continue? (If no, type 0): ");
+			self._value = input.nextInt();
+		} while (self._value != 0);
+		System.out.print("Thank you! See you next time!");
+	}
+	public void calculateBmiDescription()
+	{
+		if (_bmi < 18.5)
+		{
+			System.out.print("Underweight");
+		}
+		else if (_bmi >= 18.5 && _bmi < 25)
+		{
+			System.out.print("Normal");
+		}
+		else if (_bmi >= 25 && _bmi < 30)
+		{
+			System.out.print("Overweight");
+		}
+		else
+		{
+			System.out.print("Obese");
+		}
+	}
+}

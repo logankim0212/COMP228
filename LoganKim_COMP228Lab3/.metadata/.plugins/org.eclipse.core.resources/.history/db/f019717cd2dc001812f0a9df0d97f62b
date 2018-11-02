@@ -1,0 +1,10 @@
+package application;
+
+public abstract class Mortgage {
+	// declarations & initializations
+	protected int _number;
+	protected String _name;
+	protected double _amount;
+	protected double _rate;
+	protected int _term;
+}

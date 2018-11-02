@@ -1,0 +1,9 @@
+package application;
+
+public class Painting extends Shape{
+	private Shape[] shapeList = new Shape[3];
+
+	public Painting(Shape[] list) {
+
+	}
+}
