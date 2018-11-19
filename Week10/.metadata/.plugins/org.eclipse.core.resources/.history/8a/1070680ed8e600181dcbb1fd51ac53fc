@@ -1,0 +1,24 @@
+package application;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+public class MainController {
+	// field variables
+	@FXML private Button _btnAccept;
+
+	// this method gets automatically called when the application runs
+	@FXML public void initialize() {
+		// attach the accept button with the event handle object
+		this._btnAccept.setOnAction(new AcceptHandler());
+	}
+
+	private class AcceptHandler implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent e) {
+			System.out.println("Accept button clicked");
+		}
+	}
+}

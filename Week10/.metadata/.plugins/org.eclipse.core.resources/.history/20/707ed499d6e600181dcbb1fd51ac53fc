@@ -1,0 +1,11 @@
+package application;
+
+import javafx.fxml.FXML;
+
+public class MainController {
+	// this method gets automatically called when the application runs
+	@FXML
+	public void initialize() {
+
+	}
+}

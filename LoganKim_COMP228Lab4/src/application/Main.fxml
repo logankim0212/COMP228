@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.MainController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Name:" />
+      <Label layoutX="14.0" layoutY="53.0" text="Address:" />
+      <Label layoutX="14.0" layoutY="88.0" text="Province:" />
+      <Label layoutX="14.0" layoutY="127.0" text="City:" />
+      <Label layoutX="14.0" layoutY="163.0" text="Postal Code:" />
+      <Label layoutX="14.0" layoutY="200.0" text="Phone Number:" />
+      <Label layoutX="14.0" layoutY="239.0" text="Email:" />
+      <TextField fx:id="_txtName" layoutX="170.0" layoutY="9.0" prefHeight="27.0" prefWidth="219.0" />
+      <TextField fx:id="_txtAddress" layoutX="170.0" layoutY="48.0" prefHeight="27.0" prefWidth="219.0" />
+      <TextField fx:id="_txtProvince" layoutX="170.0" layoutY="83.0" prefHeight="27.0" prefWidth="219.0" />
+      <TextField fx:id="_txtCity" layoutX="170.0" layoutY="122.0" prefHeight="27.0" prefWidth="219.0" />
+      <TextField fx:id="_txtPostalCode" layoutX="170.0" layoutY="158.0" prefHeight="27.0" prefWidth="219.0" />
+      <TextField fx:id="_txtPhoneNumber" layoutX="170.0" layoutY="195.0" prefHeight="27.0" prefWidth="219.0" />
+      <TextField fx:id="_txtEmail" layoutX="170.0" layoutY="234.0" prefHeight="27.0" prefWidth="219.0" />
+      <Button fx:id="_btnDisplay" layoutX="352.0" layoutY="276.0" mnemonicParsing="false" onAction="#onDisplayClicked" prefHeight="27.0" prefWidth="96.0" text="Display" />
+      <CheckBox fx:id="_cbxStudentCouncil" layoutX="400.0" layoutY="57.0" mnemonicParsing="false" text="Student Council" />
+      <CheckBox fx:id="_cbxVolunteerWork" layoutX="398.0" layoutY="195.0" mnemonicParsing="false" text="Volunteer Work" />
+      <RadioButton fx:id="_btnCS" layoutX="560.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSelectCS" text="Computer Science">
+         <toggleGroup>
+            <ToggleGroup fx:id="CourseGrp" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="_btnB" layoutX="707.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSelectB" text="Business" toggleGroup="$CourseGrp" />
+      <ComboBox fx:id="_cmbCourse" layoutX="554.0" layoutY="57.0" onAction="#onSelectCmb" prefHeight="27.0" prefWidth="232.0" />
+      <TextArea fx:id="_txtCourse" editable="false" layoutX="554.0" layoutY="104.0" prefHeight="159.0" prefWidth="232.0" />
+      <TextArea fx:id="_txtOutput" editable="false" layoutX="10.0" layoutY="315.0" prefHeight="75.0" prefWidth="779.0" />
+   </children>
+</AnchorPane>
